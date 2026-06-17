@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Aurelia Ribaudo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav" class="solid">
+  <a href="index.html" class="nav-logo">A · R</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html">Experiences</a></li>
+    <li><a href="contact.html" class="active">Contact Me</a></li>
+  </ul>
+</nav>
+
+<!-- WEATHER WIDGET -->
+<div id="weather-widget"></div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <p class="label">Let’s talk</p>
+  <h1>Contact &amp; <em>Collaborations</em></h1>
+  <p>I am open to new professional opportunities, collaborations, and projects. Feel free to reach out.</p>
+</div>
+
+<!-- CONTACT SECTION -->
+<div class="contact-section">
+  <div class="contact-grid">
+
+    <!-- INFO -->
+    <div class="info-col animate">
+      <div class="info-block">
+        <p class="info-block-label">Email</p>
+        <a href="mailto:aureliaribaudo@gmail.com" class="info-block-value">aureliaribaudo@gmail.com</a>
+        <p class="info-block-sub">Response within 24–48 hours</p>
+      </div>
+      <div class="info-block">
+        <p class="info-block-label">Phone</p>
+        <a href="tel:+393341576921" class="info-block-value">+39 334 1576921</a>
+        <p class="info-block-sub">Available on WhatsApp</p>
+      </div>
+      <div class="info-block">
+        <p class="info-block-label">Location</p>
+        <span class="info-block-value no-link">Palermo, Sicily</span>
+        <p class="info-block-sub">Italy · Available remotely</p>
+      </div>
+
+      <div class="info-block">
+        <p class="info-block-label">Resources</p>
+        <div class="social-links">
+          <a href="mailto:aureliaribaudo@gmail.com" class="social-link">
+            <span class="social-icon">✉️</span> aureliaribaudo@gmail.com
+          </a>
+          <a href="images/cvaurepdf.pdf" download class="social-link">
+            <span class="social-icon">📄</span> Download CV
+          </a>
+        </div>
+      </div>
+
+      <div class="availability-badge">
+        <span class="availability-dot"></span>
+        Available for new opportunities
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="form-col animate" style="transition-delay:.15s">
+      <h2 class="form-title">Send me a message</h2>
+
+      <div id="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="fname">First Name *</label>
+            <input class="form-input" type="text" id="fname" placeholder="Your name" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="lname">Last Name</label>
+            <input class="form-input" type="text" id="lname" placeholder="Your surname" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="email">Email *</label>
+          <input class="form-input" type="email" id="email" placeholder="your@email.com" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="subject">Subject</label>
+          <select class="form-select" id="subject">
+            <option value="" disabled selected>Select an option</option>
+            <option>Job opportunity</option>
+            <option>Academic collaboration</option>
+            <option>Freelance project</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="message">Message *</label>
+          <textarea class="form-textarea" id="message" placeholder="Describe your proposal or request..."></textarea>
+        </div>
+
+        <div class="form-check">
+          <input type="checkbox" id="privacy" />
+          <label for="privacy">I have read and accept the privacy policy. The data entered will be used exclusively to respond to the request.</label>
+        </div>
+
+        <button class="btn-submit" id="submit-btn">Send Message</button>
+        <p class="form-note">* Required fields · This form is for demonstration purposes (HTML/CSS/JS)</p>
+      </div>
+
+      <div class="success-msg" id="success-msg">
+        <h3>Message sent ✓</h3>
+        <p>Thank you for contacting me. I will get back to you as soon as possible!</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- LOCATION STRIP -->
+<div class="location-strip">
+  <span class="loc-pin">📍</span>
+  <div class="loc-text">
+    <h3>Palermo, Sicily — Italy</h3>
+    <p>Master’s Student in Digital Humanities · UniPa · Available remotely and for travel</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2025 Aurelia Ribaudo</span>
+  <span>Palermo, Italy · <a href="mailto:aureliaribaudo@gmail.com">aureliaribaudo@gmail.com</a></span>
+</footer>
+
+<script src="js/nav.js"></script>
+<script src="js/weather.js"></script>
+<script src="js/contact.js"></script>
+</body>
+</html>

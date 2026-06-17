@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experiences — Aurelia Ribaudo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/projects.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav" class="solid">
+  <a href="index.html" class="nav-logo">A · R</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html" class="active">Experiences</a></li>
+    <li><a href="contact.html">Contact Me</a></li>
+  </ul>
+</nav>
+
+<!-- WEATHER WIDGET -->
+<div id="weather-widget"></div>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <p class="label">Professional path</p>
+  <h1>Experiences &amp; <em>Projects</em></h1>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat"><p class="stat-num">5</p><p class="stat-label">Professional Roles</p></div>
+  <div class="stat"><p class="stat-num">3</p><p class="stat-label">Countries</p></div>
+  <div class="stat"><p class="stat-num">3</p><p class="stat-label">Languages</p></div>
+  <div class="stat"><p class="stat-num">5+</p><p class="stat-label">Years of Experience</p></div>
+</div>
+
+<!-- FILTER -->
+<div class="filter-bar">
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="educazione">Education</button>
+  <button class="filter-btn" data-filter="tech">Tech &amp; AI</button>
+  <button class="filter-btn" data-filter="internazionale">International</button>
+  <button class="filter-btn" data-filter="management">Management</button>
+  <button class="filter-btn" data-filter="sport">Sport</button>
+</div>
+
+<!-- EXPERIENCE CARDS -->
+<div class="exp-section">
+  <div class="exp-grid">
+
+  <div class="exp-card" data-cat="educazione sport">
+    <div class="exp-meta">
+      <p class="exp-period">Nov 2025 — Present</p>
+      <p class="exp-location">Palermo, IT</p>
+      <span class="exp-country-tag">🇮🇹 Italy</span>
+    </div>
+    <div class="exp-vline"></div>
+    <div class="exp-body">
+      <h2 class="exp-role">Teacher</h2>
+      <p class="exp-company">CSU Association – University Services Center, Messina</p>
+      <ul class="exp-bullets">
+        <li>Design and delivery of educational activities tailored to students' learning needs.</li>
+        <li>Classroom management and coordination of educational activities, fostering an inclusive and engaging learning environment.</li>
+        <li>Assessment of student progress and monitoring of outcomes through structured evaluation tools.</li>
+        <li>Development and implementation of innovative teaching strategies to improve performance, motivation, and engagement.</li>
+      </ul>
+      <div class="exp-tags">
+        <span class="exp-tag">Teaching</span>
+        <span class="exp-tag">Leadership</span>
+        <span class="exp-tag">Classroom Management</span>
+        <span class="exp-tag">Assessment</span>
+      </div>
+
+      <div style="border-top: 1px solid var(--border); margin: 1.8rem 0;"></div>
+
+      <h2 class="exp-role">Certified Volleyball Referee</h2>
+      <p class="exp-company">FIPAV — Italian Volleyball Federation</p>
+      <ul class="exp-bullets">
+        <li>Officiating volleyball matches at regional level, ensuring fair play and strict rule enforcement.</li>
+        <li>Rapid and autonomous decision-making under pressure in dynamic, high-stakes environments.</li>
+        <li>Coordination with fellow referees and team officials, maintaining clear and authoritative communication.</li>
+      </ul>
+      <div class="exp-tags">
+        <span class="exp-tag">Decision Making</span>
+        <span class="exp-tag">Communication</span>
+        <span class="exp-tag">FIPAV Certified</span>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- OUTLIER -->
+    <div class="exp-card" data-cat="tech">
+      <div class="exp-meta">
+        <p class="exp-period">Feb 2024 — Jul 2024</p>
+        <p class="exp-location">Remote</p>
+        <span class="exp-country-tag">🌐 Remote</span>
+      </div>
+      <div class="exp-vline"></div>
+      <div class="exp-body">
+        <h2 class="exp-role">AI Trainer</h2>
+        <p class="exp-company">OUTLIER</p>
+        <ul class="exp-bullets">
+          <li>Training and optimization of AI models through annotation and review of linguistic data.</li>
+          <li>Evaluation of model outputs to improve accuracy, consistency, and reliability.</li>
+          <li>Collaboration in developing guidelines and strategies to optimize AI system performance.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">AI / LLM</span>
+          <span class="exp-tag">Data Annotation</span>
+          <span class="exp-tag">NLP</span>
+          <span class="exp-tag">QA</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Japan -->
+    <div class="exp-card" data-cat="internazionale">
+      <div class="exp-meta">
+        <p class="exp-period">Sep 2023 — Feb 2024</p>
+        <p class="exp-location">Hirosaki, Japan</p>
+        <span class="exp-country-tag">🇯🇵 Japan</span>
+      </div>
+      <div class="exp-vline"></div>
+      <div class="exp-body">
+        <h2 class="exp-role">Web Marketing &amp; Social Media</h2>
+        <p class="exp-company">Consis Co. Ltd., Hirosaki</p>
+        <ul class="exp-bullets">
+          <li>Organized management of materials and documents supporting business activities in an international context.</li>
+          <li>Acquisition of skills outlined in the internship training plan.</li>
+          <li>Preparation of reports and presentations on activities carried out within a cross-cultural team.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">Web Marketing</span>
+          <span class="exp-tag">Social Media</span>
+          <span class="exp-tag">Internship</span>
+          <span class="exp-tag">Cross-Cultural</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- London -->
+    <div class="exp-card" data-cat="management internazionale">
+      <div class="exp-meta">
+        <p class="exp-period">Feb 2022 — Sep 2022</p>
+        <p class="exp-location">London, UK</p>
+        <span class="exp-country-tag">🇬🇧 United Kingdom</span>
+      </div>
+      <div class="exp-vline"></div>
+      <div class="exp-body">
+        <h2 class="exp-role">Restaurant Manager</h2>
+        <p class="exp-company">The Cardinal Peppe Restaurant, London</p>
+        <ul class="exp-bullets">
+          <li>Management of front-of-house and kitchen staff, supervising daily operations during service.</li>
+          <li>Handling of cash operations and financial record-keeping.</li>
+          <li>Management of guest relations from initial contact to check-out, improving satisfaction and customer loyalty.</li>
+          <li>Design and implementation of methods to enhance service quality and team performance, increasing business sustainability.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="exp-tag">Team Management</span>
+          <span class="exp-tag">Customer Relations</span>
+          <span class="exp-tag">Accounting</span>
+          <span class="exp-tag">Operations</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2025 Aurelia Ribaudo</span>
+  <span>Palermo, Italy · <a href="mailto:aureliaribaudo@gmail.com">aureliaribaudo@gmail.com</a></span>
+</footer>
+
+<script src="js/nav.js"></script>
+<script src="js/weather.js"></script>
+<script src="js/projects.js"></script>
+</body>
+</html>

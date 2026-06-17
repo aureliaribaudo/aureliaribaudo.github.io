@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurelia Ribaudo — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo">A · R</a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html">Experiences</a></li>
+    <li><a href="contact.html">Contact me</a></li>
+  </ul>
+</nav>
+
+<!-- WEATHER WIDGET -->
+<div id="weather-widget"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-circle">
+    <img src="images/propic.png" alt = "Aurelia"/>
+  </div>
+  <div class="hero-content">
+    <h1 class="hero-name">Aurelia<br /><em>Ribaudo</em></h1>
+    <p class="hero-sub">Master’s student in Digital Humanities · Linguist · AI Trainer · Teacher. International experience across Japan, the United Kingdom and Italy.</p>
+    <div class="hero-cta">
+      <a href="about.html" class="btn btn-primary">Discover more</a>
+      <a href="contact.html" class="btn btn-outline">Contact me</a>
+    </div>
+  </div>
+  
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <p class="strip-item"><span>●</span> Cambridge C2 English</p>
+  <p class="strip-item"><span>●</span> Intermediate Japanese</p>
+  <p class="strip-item"><span>●</span> Digital Humanities · UniPa</p>
+  <p class="strip-item"><span>●</span> AI Training · OUTLIER</p>
+  <p class="strip-item"><span>●</span> International Experience</p>
+  <p class="strip-item"><span>●</span> Web Marketing · Japan</p>
+</div>
+
+<!-- QUOTE OF THE DAY -->
+<section class="quote-section">
+  <div class="quote-inner">
+    <p class="section-label">Quote of the day</p>
+    <div class="quote-wrapper">
+      <span class="quote-mark">"</span>
+      <blockquote id="quote-text" class="quote-text">Loading…</blockquote>
+      <p id="quote-author" class="quote-author">—</p>
+    </div>
+  </div>
+</section>
+<!-- FEATURES -->
+<section class="features-section">
+  <div class="features">
+    <p class="section-label">What I bring</p>
+    <h2 class="section-title">A multidisciplinary profile<br />between language, technology and culture</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <p class="feature-num"></p>
+        <p class="feature-tag">Linguistics</p>
+        <h3 class="feature-title">Language Mediation</h3>
+        <p class="feature-text">Degree in Linguistic and Intercultural Mediation. English C2, Intermediate Japanese, Basic French.</p>
+      </div>
+      <div class="feature-card">
+        <p class="feature-num"></p>
+        <p class="feature-tag">Tech</p>
+        <h3 class="feature-title">AI &amp; Digital</h3>
+        <p class="feature-text">AI Trainer for OUTLIER. Linguistic dataset annotation, LLM optimization, and guideline development.</p>
+      </div>
+      <div class="feature-card">
+        <p class="feature-num"></p>
+        <p class="feature-tag">International</p>
+        <h3 class="feature-title">Global Experience</h3>
+        <p class="feature-text">Internship in Japan (Hirosaki), Restaurant Manager in London. Strong adaptability and cross-cultural teamwork.</p>
+      </div>
+      <div class="feature-card">
+        <p class="feature-num"></p>
+        <p class="feature-tag">Education</p>
+        <h3 class="feature-title">Teaching &amp; Leadership</h3>
+        <p class="feature-text">Active teacher at CSU Messina. Curriculum design, classroom management, and performance monitoring.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE PREVIEW -->
+<section class="timeline-section">
+  <div class="timeline-preview">
+    <p class="section-label">Path</p>
+    <h2 class="section-title">Recent experiences</h2>
+    <div class="timeline-items">
+      <div class="tl-item">
+        <p class="tl-date">2025 –<br />Present</p>
+        <div class="tl-line"></div>
+        <div class="tl-body">
+          <p class="tl-role">Teacher</p>
+          <p class="tl-company">CSU Association · Messina, IT</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <p class="tl-date">2024 –<br />2024</p>
+        <div class="tl-line"></div>
+        <div class="tl-body">
+          <p class="tl-role">AI Trainer</p>
+          <p class="tl-company">OUTLIER · Remote</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <p class="tl-date">2023 –<br />2024</p>
+        <div class="tl-line"></div>
+        <div class="tl-body">
+          <p class="tl-role">Web Marketing &amp; Social Media</p>
+          <p class="tl-company">Consis Co. Ltd. · Hirosaki, Japan</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <p class="tl-date">2022 –<br />2022</p>
+        <div class="tl-line"></div>
+        <div class="tl-body">
+          <p class="tl-role">Restaurant Manager</p>
+          <p class="tl-company">The Cardinal Peppe · London, UK</p>
+        </div>
+      </div>
+    </div>
+    <div class="cta-center">
+      <a href="projects.html" class="btn btn-outline">View all experiences</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2026 Aurelia Ribaudo</span>
+  <span>Palermo, Italy · <a href="mailto:aureliaribaudo@gmail.com">aureliaribaudo@gmail.com</a></span>
+</footer>
+
+<script src="js/nav.js"></script>
+<script src="js/weather.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
