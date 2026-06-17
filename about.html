@@ -1,35 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About — Aurelia Ribaudo</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/global.css" />
-  <link rel="stylesheet" href="css/about.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/about.css">
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
 <!-- NAV -->
-<nav id="main-nav" class="solid">
-  <a href="index.html" class="nav-logo">A · R </a>
+<nav id="main-nav" class="solid" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">A · R<span class="sr-only">, Aurelia Ribaudo home page</span></a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
-    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="about.html" class="active" aria-current="page">About</a></li>
     <li><a href="projects.html">Experiences</a></li>
     <li><a href="contact.html">Contact Me</a></li>
   </ul>
 </nav>
 
 <!-- WEATHER WIDGET -->
-<div id="weather-widget"></div>
+<div id="weather-widget" role="status" aria-live="polite" aria-atomic="true" aria-label="Current weather"></div>
+
+<main id="main-content" tabindex="-1">
 
 <!-- PAGE HEADER -->
-<div class="page-header" style="--before-text: 'ABOUT'">
+<div class="page-header">
   <p class="label">About me</p>
-  <h1>Aurelia <em>Ribaudo</em></h1>
+  <h1 id="about-title">Aurelia <em>Ribaudo</em></h1>
 </div>
 
 <!-- ABOUT -->
@@ -48,30 +51,30 @@
           <p>PDF · Updated 2025</p>
         </div>
         <a href="images/cvaurepdf.pdf" download class="btn-dl">
-          ↓ Download CV
+          ↓ Download CV<span class="sr-only"> PDF</span>
         </a>
       </div>
     </div>
 
     <!-- SKILLS -->
-    <div class="skills-col animate" style="transition-delay:.15s">
+    <div class="skills-col animate delay-short">
       <div class="skill-group">
         <p class="skill-group-label">Languages</p>
         <div class="skill-bar-item">
           <div class="skill-bar-label"><span>Italian</span><span>Native</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-w="100"></div></div>
+          <progress class="skill-bar-track" value="100" max="100" aria-label="Italian language proficiency: Native">100%</progress>
         </div>
         <div class="skill-bar-item">
           <div class="skill-bar-label"><span>English</span><span>C2 — Proficiency</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-w="97"></div></div>
+          <progress class="skill-bar-track" value="97" max="100" aria-label="English language proficiency: C2 Proficiency">97%</progress>
         </div>
         <div class="skill-bar-item">
           <div class="skill-bar-label"><span>Japanese</span><span>Intermediate</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-w="55"></div></div>
+          <progress class="skill-bar-track" value="55" max="100" aria-label="Japanese language proficiency: Intermediate">55%</progress>
         </div>
         <div class="skill-bar-item">
           <div class="skill-bar-label"><span>French</span><span>Basic</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-w="30"></div></div>
+          <progress class="skill-bar-track" value="30" max="100" aria-label="French language proficiency: Basic">30%</progress>
         </div>
       </div>
 
@@ -132,37 +135,37 @@
 <div class="interests-section">
   <div class="interests-inner">
     <p class="section-label">Interests</p>
-    <h2 class="section-title" style="font-size:1.8rem">What I'm passionate about</h2>
+    <h2 class="section-title section-title-sm">What I'm passionate about</h2>
     <div class="interests-grid">
 
       <div class="interest-card">
         <div class="interest-card-header">
-          <span class="interest-icon">✈️</span>
-          <h3 class="interest-card-title">Travel & Itinerary Planning</h3>
+          <span class="interest-icon" aria-hidden="true">✈️</span>
+          <h3 class="interest-card-title">Travel &amp; Itinerary Planning</h3>
         </div>
         <p class="interest-card-desc">Exploring new countries and cultures is one of my greatest drives. I love crafting detailed itineraries that turn a trip into a seamless, memorable experience.</p>
       </div>
 
       <div class="interest-card">
         <div class="interest-card-header">
-          <span class="interest-icon">📚</span>
-          <h3 class="interest-card-title">Reading & Writing</h3>
+          <span class="interest-icon" aria-hidden="true">📚</span>
+          <h3 class="interest-card-title">Reading &amp; Writing</h3>
         </div>
         <p class="interest-card-desc">Books and words are my creative refuge. Whether reading across genres or writing reflective pieces, I use language to make sense of the world around me.</p>
       </div>
 
       <div class="interest-card">
         <div class="interest-card-header">
-          <span class="interest-icon">🎓</span>
-          <h3 class="interest-card-title">Teaching & World Cultures</h3>
+          <span class="interest-icon" aria-hidden="true">🎓</span>
+          <h3 class="interest-card-title">Teaching &amp; World Cultures</h3>
         </div>
         <p class="interest-card-desc">Sharing knowledge and bridging cultural differences is at the heart of what I do. I find deep meaning in connecting people through education and intercultural dialogue.</p>
       </div>
       <div class="interest-card">
 
       <div class="interest-card-header">
-        <span class="interest-icon">🏐</span>
-        <h3 class="interest-card-title">Volleyball & Refereeing</h3>
+        <span class="interest-icon" aria-hidden="true">🏐</span>
+        <h3 class="interest-card-title">Volleyball &amp; Refereeing</h3>
       </div>
       <p class="interest-card-desc">I am a certified volleyball referee — a role that trains precision, composure, and instant decision-making. Sport, for me, is a discipline that mirrors the rigor I bring to every professional challenge.</p>
     </div>
@@ -175,21 +178,23 @@
 <div class="gallery-section">
   <div class="gallery-inner">
     <p class="section-label">Gallery</p>
-    <h2 class="section-title" style="font-size:1.8rem">Moments & Places</h2>
+    <h2 class="section-title section-title-sm">Moments &amp; Places</h2>
   </div>
  <div class="gallery-track-wrapper">
-  <button class="gallery-arrow left" id="galleryPrev">&#8592;</button>
-  <div class="gallery-track" id="galleryTrack">
-    <div class="gallery-slide"><img src="images/img1.jpeg" alt="Photo 1" /></div>
-    <div class="gallery-slide"><img src="images/img2.jpeg" alt="Photo 2" /></div>
-    <div class="gallery-slide"><img src="images/img3.jpeg" alt="Photo 3" /></div>
-    <div class="gallery-slide"><img src="images/img4.jpeg" alt="Photo 4" /></div>
-    <div class="gallery-slide"><img src="images/img5.jpeg" alt="Photo 5" /></div>
-  </div>
-  <button class="gallery-arrow right" id="galleryNext">&#8594;</button>
+  <button class="gallery-arrow left" id="galleryPrev" type="button" aria-label="Previous gallery image">&#8592;</button>
+  <section class="gallery-track" id="galleryTrack" aria-label="Gallery: moments and places" aria-live="polite">
+    <div class="gallery-slide"><img src="images/img1.jpeg" alt="Illuminated Gothic church interior with vaulted ceiling and stained glass"></div>
+    <div class="gallery-slide"><img src="images/img2.jpeg" alt="City view through large palace windows overlooking gardens"></div>
+    <div class="gallery-slide"><img src="images/img3.jpeg" alt="Historic palace facade with green domes and a horse carriage"></div>
+    <div class="gallery-slide"><img src="images/img4.jpeg" alt="Two red mugs at a Christmas market with a decorated tree in the background"></div>
+    <div class="gallery-slide"><img src="images/img5.jpeg" alt="Breakfast with croissant and coffee in front of a Christmas tree"></div>
+  </section>
+  <button class="gallery-arrow right" id="galleryNext" type="button" aria-label="Next gallery image">&#8594;</button>
 </div>
-<div class="gallery-dots"></div>
+<div class="gallery-dots" role="group" aria-label="Choose gallery image"></div>
 </div>
+
+</main>
 
 <!-- FOOTER -->
 <footer>

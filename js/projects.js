@@ -26,15 +26,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
+      filterBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
       btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
 
       const filter = btn.dataset.filter;
 
       cards.forEach(card => {
         const cats = card.dataset.cat || '';
         const show = filter === 'all' || cats.includes(filter);
-        card.style.display = show ? 'grid' : 'none';
+        card.hidden = !show;
       });
     });
   });

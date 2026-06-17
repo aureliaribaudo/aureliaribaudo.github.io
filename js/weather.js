@@ -5,37 +5,37 @@
  */
 
 const WMO_CODES = {
-  0:  { label: 'Sereno',           icon: '☀️' },
-  1:  { label: 'Quasi sereno',     icon: '🌤️' },
-  2:  { label: 'Parzialmente nuvoloso', icon: '⛅' },
-  3:  { label: 'Nuvoloso',         icon: '☁️' },
-  45: { label: 'Nebbia',           icon: '🌫️' },
-  48: { label: 'Nebbia ghiacciata',icon: '🌫️' },
-  51: { label: 'Pioggerella',      icon: '🌦️' },
-  53: { label: 'Pioggerella',      icon: '🌦️' },
-  55: { label: 'Pioggerella intensa', icon: '🌧️' },
-  61: { label: 'Pioggia',          icon: '🌧️' },
-  63: { label: 'Pioggia moderata', icon: '🌧️' },
-  65: { label: 'Pioggia intensa',  icon: '🌧️' },
-  71: { label: 'Neve',             icon: '🌨️' },
-  73: { label: 'Neve moderata',    icon: '❄️' },
-  75: { label: 'Neve intensa',     icon: '❄️' },
-  80: { label: 'Rovesci',          icon: '🌦️' },
-  81: { label: 'Rovesci moderati', icon: '🌧️' },
-  82: { label: 'Rovesci violenti', icon: '⛈️' },
-  95: { label: 'Temporale',        icon: '⛈️' },
-  99: { label: 'Temporale con grandine', icon: '⛈️' },
+  0:  { label: 'Clear',                  icon: '☀️' },
+  1:  { label: 'Mostly clear',           icon: '🌤️' },
+  2:  { label: 'Partly cloudy',          icon: '⛅' },
+  3:  { label: 'Cloudy',                 icon: '☁️' },
+  45: { label: 'Fog',                    icon: '🌫️' },
+  48: { label: 'Freezing fog',           icon: '🌫️' },
+  51: { label: 'Light drizzle',          icon: '🌦️' },
+  53: { label: 'Drizzle',                icon: '🌦️' },
+  55: { label: 'Heavy drizzle',          icon: '🌧️' },
+  61: { label: 'Rain',                   icon: '🌧️' },
+  63: { label: 'Moderate rain',          icon: '🌧️' },
+  65: { label: 'Heavy rain',             icon: '🌧️' },
+  71: { label: 'Snow',                   icon: '🌨️' },
+  73: { label: 'Moderate snow',          icon: '❄️' },
+  75: { label: 'Heavy snow',             icon: '❄️' },
+  80: { label: 'Rain showers',           icon: '🌦️' },
+  81: { label: 'Moderate rain showers',  icon: '🌧️' },
+  82: { label: 'Violent rain showers',   icon: '⛈️' },
+  95: { label: 'Thunderstorm',           icon: '⛈️' },
+  99: { label: 'Thunderstorm with hail', icon: '⛈️' },
 };
 
 function getWeatherInfo(code) {
-  return WMO_CODES[code] || { label: 'Variabile', icon: '🌡️' };
+  return WMO_CODES[code] || { label: 'Variable weather', icon: '🌡️' };
 }
 
 async function reverseGeocode(lat, lon) {
   try {
     const res = await fetch(
-      `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json&accept-language=it`,
-      { headers: { 'Accept-Language': 'it' } }
+      `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json&accept-language=en`,
+      { headers: { 'Accept-Language': 'en' } }
     );
     const data = await res.json();
     return (
@@ -43,10 +43,10 @@ async function reverseGeocode(lat, lon) {
       data.address?.town ||
       data.address?.village ||
       data.address?.county ||
-      'La tua posizione'
+      'Your location'
     );
   } catch {
-    return 'La tua posizione';
+    return 'Your location';
   }
 }
 
@@ -67,22 +67,25 @@ function renderWidget(temp, code, city) {
   if (!widget) return;
 
   const { label, icon } = getWeatherInfo(code);
+  const roundedTemp = Math.round(temp);
 
   widget.innerHTML = `
-    <span class="weather-icon">${icon}</span>
+    <span class="weather-icon" aria-hidden="true">${icon}</span>
     <div class="weather-body">
-      <span class="weather-temp">${Math.round(temp)}°C</span>
+      <span class="weather-temp">${roundedTemp}°C</span>
       <span class="weather-desc">${label}</span>
       <span class="weather-loc">${city}</span>
     </div>
   `;
+  widget.setAttribute('aria-label', `Current weather in ${city}: ${roundedTemp} degrees Celsius, ${label}`);
   widget.classList.add('loaded');
 }
 
 function renderError() {
   const widget = document.getElementById('weather-widget');
   if (!widget) return;
-  widget.innerHTML = `<span class="weather-error">Meteo non disponibile</span>`;
+  widget.innerHTML = `<span class="weather-error">Weather unavailable</span>`;
+  widget.setAttribute('aria-label', 'Current weather unavailable');
   widget.classList.add('loaded');
 }
 
@@ -91,7 +94,8 @@ function initWeather() {
   if (!widget) return;
 
   // Loading state
-  widget.innerHTML = `<span class="weather-icon">🌡️</span><div class="weather-body"><span class="weather-desc">Rilevamento...</span></div>`;
+  widget.innerHTML = `<span class="weather-icon" aria-hidden="true">🌡️</span><div class="weather-body"><span class="weather-desc">Detecting location...</span></div>`;
+  widget.setAttribute('aria-label', 'Detecting current weather');
 
   if (!navigator.geolocation) {
     renderError();

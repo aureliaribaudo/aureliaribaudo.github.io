@@ -21,32 +21,85 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.animate').forEach(el => observer.observe(el));
 
   /* ── Form ── */
-  const submitBtn = document.getElementById('submit-btn');
-  if (!submitBtn) return;
+  const form = document.getElementById('contact-form');
+  if (!form) return;
 
-  submitBtn.addEventListener('click', () => {
-    const fname   = document.getElementById('fname');
-    const email   = document.getElementById('email');
-    const message = document.getElementById('message');
-    const privacy = document.getElementById('privacy');
+  const status = document.getElementById('form-status');
+  const successMsg = document.getElementById('success-msg');
 
+  const requiredFields = [
+    {
+      field: document.getElementById('fname'),
+      error: document.getElementById('fname-error'),
+      message: 'Enter your first name.',
+      validate: field => field.value.trim().length > 0,
+    },
+    {
+      field: document.getElementById('email'),
+      error: document.getElementById('email-error'),
+      message: 'Enter a valid email address.',
+      validate: field => field.value.trim().length > 0 && field.validity.valid,
+    },
+    {
+      field: document.getElementById('message'),
+      error: document.getElementById('message-error'),
+      message: 'Enter a message.',
+      validate: field => field.value.trim().length > 0,
+    },
+    {
+      field: document.getElementById('privacy'),
+      error: document.getElementById('privacy-error'),
+      message: 'Accept the privacy policy to continue.',
+      validate: field => field.checked,
+    },
+  ];
+
+  function setFieldError(item, message = '') {
+    const hasError = Boolean(message);
+    item.field.classList.toggle('error', hasError);
+    item.field.setAttribute('aria-invalid', String(hasError));
+    item.error.textContent = message;
+  }
+
+  function clearErrors() {
+    requiredFields.forEach(item => setFieldError(item));
+    status.textContent = '';
+  }
+
+  requiredFields.forEach(item => {
+    item.field.addEventListener('input', () => {
+      if (item.validate(item.field)) setFieldError(item);
+    });
+
+    item.field.addEventListener('change', () => {
+      if (item.validate(item.field)) setFieldError(item);
+    });
+  });
+
+  form.addEventListener('submit', event => {
+    event.preventDefault();
     let valid = true;
+    let firstInvalid = null;
 
-    [fname, email, message].forEach(field => field.classList.remove('error'));
+    clearErrors();
 
-    if (!fname.value.trim())   { fname.classList.add('error');   valid = false; }
-    if (!email.value.trim() || !email.value.includes('@')) { email.classList.add('error'); valid = false; }
-    if (!message.value.trim()) { message.classList.add('error'); valid = false; }
+    requiredFields.forEach(item => {
+      if (!item.validate(item.field)) {
+        setFieldError(item, item.message);
+        valid = false;
+        firstInvalid = firstInvalid || item.field;
+      }
+    });
 
-    if (!privacy.checked) {
-      alert('Per continuare, accetta l\'informativa sulla privacy.');
-      valid = false;
+    if (!valid) {
+      status.textContent = 'Please correct the highlighted fields.';
+      firstInvalid.focus();
+      return;
     }
 
-    if (!valid) return;
-
-    document.getElementById('contact-form').style.display = 'none';
-    document.getElementById('success-msg').classList.add('show');
+    form.hidden = true;
+    successMsg.classList.add('show');
+    successMsg.focus();
   });
 
 });

@@ -4,7 +4,7 @@
   --surface:     #241f17;          /* superfici leggermente più chiare */
   --border:      #3a3228;          /* bordi visibili */
   --cream:       #f0e8d8;          /* testo principale: crema chiara, alto contrasto */
-  --muted:       #b8a890;          /* testo secondario: leggibile, non troppo fioco */
+  --muted:       #c9bca6;          /* testo secondario: leggibile, non troppo fioco */
   --gold:        #d4a853;          /* accento oro vivo */
   --gold-light:  #e8c47a;          /* accento dorato più luminoso */
 }
@@ -112,6 +112,7 @@
   display: flex; gap: 3rem; overflow: hidden;
   background: var(--surface);
   justify-content: center;
+  list-style: none;
 }
 .strip-item { white-space: nowrap; font-size: .72rem; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); }
 .strip-item span { color: var(--gold); margin-right: .5rem; }

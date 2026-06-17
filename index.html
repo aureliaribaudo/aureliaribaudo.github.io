@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aurelia Ribaudo — Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/global.css" />
-  <link rel="stylesheet" href="css/index.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
 <!-- NAV -->
-<nav id="main-nav">
-  <a href="index.html" class="nav-logo">A · R</a>
+<nav id="main-nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">A · R<span class="sr-only">, Aurelia Ribaudo home page</span></a>
   <ul class="nav-links">
-    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="index.html" class="active" aria-current="page">Home</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="projects.html">Experiences</a></li>
     <li><a href="contact.html">Contact me</a></li>
@@ -24,73 +25,78 @@
 </nav>
 
 <!-- WEATHER WIDGET -->
-<div id="weather-widget"></div>
+<div id="weather-widget" role="status" aria-live="polite" aria-atomic="true" aria-label="Current weather"></div>
+
+<main id="main-content" tabindex="-1">
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
+<section class="hero" aria-labelledby="home-title">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-grid" aria-hidden="true"></div>
   <div class="hero-circle">
-    <img src="images/propic.png" alt = "Aurelia"/>
+    <img src="images/propic.png" alt="Portrait of Aurelia Ribaudo">
   </div>
   <div class="hero-content">
-    <h1 class="hero-name">Aurelia<br /><em>Ribaudo</em></h1>
+    <h1 class="hero-name" id="home-title">Aurelia<br><em>Ribaudo</em></h1>
     <p class="hero-sub">Master’s student in Digital Humanities · Linguist · AI Trainer · Teacher. International experience across Japan, the United Kingdom and Italy.</p>
     <div class="hero-cta">
       <a href="about.html" class="btn btn-primary">Discover more</a>
       <a href="contact.html" class="btn btn-outline">Contact me</a>
     </div>
   </div>
-  
+
 </section>
 
 <!-- STRIP -->
-<div class="strip">
-  <p class="strip-item"><span>●</span> Cambridge C2 English</p>
-  <p class="strip-item"><span>●</span> Intermediate Japanese</p>
-  <p class="strip-item"><span>●</span> Digital Humanities · UniPa</p>
-  <p class="strip-item"><span>●</span> AI Training · OUTLIER</p>
-  <p class="strip-item"><span>●</span> International Experience</p>
-  <p class="strip-item"><span>●</span> Web Marketing · Japan</p>
-</div>
+<section aria-labelledby="profile-highlights-title">
+  <h2 class="sr-only" id="profile-highlights-title">Profile highlights</h2>
+  <ul class="strip">
+    <li class="strip-item"><span aria-hidden="true">●</span> Cambridge C2 English</li>
+    <li class="strip-item"><span aria-hidden="true">●</span> Intermediate Japanese</li>
+    <li class="strip-item"><span aria-hidden="true">●</span> Digital Humanities · UniPa</li>
+    <li class="strip-item"><span aria-hidden="true">●</span> AI Training · OUTLIER</li>
+    <li class="strip-item"><span aria-hidden="true">●</span> International Experience</li>
+    <li class="strip-item"><span aria-hidden="true">●</span> Web Marketing · Japan</li>
+  </ul>
+</section>
 
 <!-- QUOTE OF THE DAY -->
-<section class="quote-section">
+<section class="quote-section" aria-labelledby="quote-title">
   <div class="quote-inner">
-    <p class="section-label">Quote of the day</p>
+    <p class="section-label" id="quote-title">Quote of the day</p>
     <div class="quote-wrapper">
-      <span class="quote-mark">"</span>
-      <blockquote id="quote-text" class="quote-text">Loading…</blockquote>
+      <span class="quote-mark" aria-hidden="true">"</span>
+      <blockquote id="quote-text" class="quote-text" aria-live="polite">Loading…</blockquote>
       <p id="quote-author" class="quote-author">—</p>
     </div>
   </div>
 </section>
 <!-- FEATURES -->
-<section class="features-section">
+<section class="features-section" aria-labelledby="features-title">
   <div class="features">
     <p class="section-label">What I bring</p>
-    <h2 class="section-title">A multidisciplinary profile<br />between language, technology and culture</h2>
+    <h2 class="section-title" id="features-title">A multidisciplinary profile<br>between language, technology and culture</h2>
     <div class="features-grid">
       <div class="feature-card">
-        <p class="feature-num"></p>
+        <p class="feature-num" aria-hidden="true"></p>
         <p class="feature-tag">Linguistics</p>
         <h3 class="feature-title">Language Mediation</h3>
         <p class="feature-text">Degree in Linguistic and Intercultural Mediation. English C2, Intermediate Japanese, Basic French.</p>
       </div>
       <div class="feature-card">
-        <p class="feature-num"></p>
+        <p class="feature-num" aria-hidden="true"></p>
         <p class="feature-tag">Tech</p>
         <h3 class="feature-title">AI &amp; Digital</h3>
         <p class="feature-text">AI Trainer for OUTLIER. Linguistic dataset annotation, LLM optimization, and guideline development.</p>
       </div>
       <div class="feature-card">
-        <p class="feature-num"></p>
+        <p class="feature-num" aria-hidden="true"></p>
         <p class="feature-tag">International</p>
         <h3 class="feature-title">Global Experience</h3>
         <p class="feature-text">Internship in Japan (Hirosaki), Restaurant Manager in London. Strong adaptability and cross-cultural teamwork.</p>
       </div>
       <div class="feature-card">
-        <p class="feature-num"></p>
+        <p class="feature-num" aria-hidden="true"></p>
         <p class="feature-tag">Education</p>
         <h3 class="feature-title">Teaching &amp; Leadership</h3>
         <p class="feature-text">Active teacher at CSU Messina. Curriculum design, classroom management, and performance monitoring.</p>
@@ -100,38 +106,38 @@
 </section>
 
 <!-- TIMELINE PREVIEW -->
-<section class="timeline-section">
+<section class="timeline-section" aria-labelledby="timeline-title">
   <div class="timeline-preview">
     <p class="section-label">Path</p>
-    <h2 class="section-title">Recent experiences</h2>
+    <h2 class="section-title" id="timeline-title">Recent experiences</h2>
     <div class="timeline-items">
       <div class="tl-item">
-        <p class="tl-date">2025 –<br />Present</p>
-        <div class="tl-line"></div>
+        <p class="tl-date">2025 –<br>Present</p>
+        <div class="tl-line" aria-hidden="true"></div>
         <div class="tl-body">
           <p class="tl-role">Teacher</p>
           <p class="tl-company">CSU Association · Messina, IT</p>
         </div>
       </div>
       <div class="tl-item">
-        <p class="tl-date">2024 –<br />2024</p>
-        <div class="tl-line"></div>
+        <p class="tl-date">2024 –<br>2024</p>
+        <div class="tl-line" aria-hidden="true"></div>
         <div class="tl-body">
           <p class="tl-role">AI Trainer</p>
           <p class="tl-company">OUTLIER · Remote</p>
         </div>
       </div>
       <div class="tl-item">
-        <p class="tl-date">2023 –<br />2024</p>
-        <div class="tl-line"></div>
+        <p class="tl-date">2023 –<br>2024</p>
+        <div class="tl-line" aria-hidden="true"></div>
         <div class="tl-body">
           <p class="tl-role">Web Marketing &amp; Social Media</p>
           <p class="tl-company">Consis Co. Ltd. · Hirosaki, Japan</p>
         </div>
       </div>
       <div class="tl-item">
-        <p class="tl-date">2022 –<br />2022</p>
-        <div class="tl-line"></div>
+        <p class="tl-date">2022 –<br>2022</p>
+        <div class="tl-line" aria-hidden="true"></div>
         <div class="tl-body">
           <p class="tl-role">Restaurant Manager</p>
           <p class="tl-company">The Cardinal Peppe · London, UK</p>
@@ -143,6 +149,8 @@
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- FOOTER -->
 <footer>

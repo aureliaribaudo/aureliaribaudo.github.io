@@ -3,7 +3,7 @@
   --surface:     #241f17;          /* superfici leggermente più chiare */
   --border:      #3a3228;          /* bordi visibili */
   --cream:       #f0e8d8;          /* testo principale: crema chiara, alto contrasto */
-  --muted:       #b8a890;          /* testo secondario: leggibile, non troppo fioco */
+  --muted:       #c9bca6;          /* testo secondario: leggibile, non troppo fioco */
   --gold:        #d4a853;          /* accento oro vivo */
   --gold-light:  #e8c47a;          /* accento dorato più luminoso */
 }
@@ -13,6 +13,7 @@
   border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
   padding: 3rem;
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+  list-style: none;
 }
 .stat { text-align: center; padding: 1rem; }
 .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: var(--gold); line-height: 1; }
@@ -32,7 +33,7 @@
   cursor: pointer; font-family: 'DM Sans', sans-serif;
   transition: all .25s;
 }
-.filter-btn:hover, .filter-btn.active { border-color: var(--gold); color: var(--gold); }
+.filter-btn:hover, .filter-btn.active, .filter-btn[aria-pressed="true"] { border-color: var(--gold-light); color: var(--gold-light); }
 
 /* ── EXPERIENCE CARDS ── */
 .exp-section { padding: 4rem 3rem; max-width: 1200px; margin: 0 auto; }
@@ -71,7 +72,7 @@
 
 .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: .6rem; }
 .exp-bullets li {
-  font-size: .85rem; color: #b5afa6;
+  font-size: .85rem; color: var(--muted);
   padding-left: 1.2rem; position: relative; line-height: 1.7;
 }
 .exp-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
@@ -80,6 +81,11 @@
 .exp-tag {
   padding: .3rem .8rem; border: 1px solid var(--border);
   font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted);
+}
+
+.exp-divider {
+  border-top: 1px solid var(--border);
+  margin: 1.8rem 0;
 }
 
 /* ── RESPONSIVE ── */
