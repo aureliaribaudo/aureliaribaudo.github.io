@@ -182,13 +182,13 @@
 .quote-wrapper {
   margin-top: 1.8rem;
   position: relative;
-  padding-left: 2rem;
+  padding-left: 3rem;
   border-left: 1px solid var(--gold);
 }
 .quote-mark {
   position: absolute;
   top: -1.4rem;
-  left: -.1rem;
+  left:0.8rem;
   font-family: 'Cormorant Garamond', serif;
   font-size: 5rem;
   line-height: 1;
