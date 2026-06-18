@@ -46,6 +46,10 @@
   opacity: 0; transform: translateY(16px);
   transition: opacity .6s, transform .6s;
 }
+.exp-card[hidden],
+.exp-card.is-hidden {
+  display: none;
+}
 .exp-card.visible { opacity: 1; transform: translateY(0); }
 
 .exp-period { font-size: .85rem; letter-spacing: .1em; color: var(--gold); margin-bottom: .3rem; }

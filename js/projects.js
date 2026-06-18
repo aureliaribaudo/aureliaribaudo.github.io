@@ -1,46 +1,53 @@
 /**
  * projects.js
  * Handles:
- * - Scroll-reveal for .exp-card elements
+ * - Scroll reveal for .exp-card elements
  * - Category filter buttons
  */
 document.addEventListener('DOMContentLoaded', () => {
-
-  /* ── Scroll reveal ── */
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('visible'), i * 100);
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.08 }
-  );
-  document.querySelectorAll('.exp-card').forEach(el => observer.observe(el));
-
-  /* ── Filter buttons ── */
-  const filterBtns = document.querySelectorAll('.filter-btn');
   const cards = document.querySelectorAll('.exp-card');
+
+  /* Scroll reveal */
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry, i) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => entry.target.classList.add('visible'), i * 100);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.08 }
+    );
+
+    cards.forEach(el => observer.observe(el));
+  } else {
+    cards.forEach(el => el.classList.add('visible'));
+  }
+
+  /* Filter buttons */
+  const filterBtns = document.querySelectorAll('.filter-btn');
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      filterBtns.forEach(b => {
-        b.classList.remove('active');
-        b.setAttribute('aria-pressed', 'false');
+      filterBtns.forEach(button => {
+        button.classList.remove('active');
+        button.setAttribute('aria-pressed', 'false');
       });
+
       btn.classList.add('active');
       btn.setAttribute('aria-pressed', 'true');
 
       const filter = btn.dataset.filter;
 
       cards.forEach(card => {
-        const cats = card.dataset.cat || '';
-        const show = filter === 'all' || cats.includes(filter);
-        card.hidden = !show;
+        const categories = (card.dataset.cat || '').split(/\s+/);
+        const shouldShow = filter === 'all' || categories.includes(filter);
+
+        card.hidden = !shouldShow;
+        card.classList.toggle('is-hidden', !shouldShow);
       });
     });
   });
-
 });
