@@ -70,14 +70,13 @@ function renderWidget(temp, code, city) {
   const roundedTemp = Math.round(temp);
 
   widget.innerHTML = `
-    <span class="weather-icon" aria-hidden="true">${icon}</span>
+    <span class="weather-icon">${icon}</span>
     <div class="weather-body">
       <span class="weather-temp">${roundedTemp}°C</span>
       <span class="weather-desc">${label}</span>
       <span class="weather-loc">${city}</span>
     </div>
   `;
-  widget.setAttribute('aria-label', `Current weather in ${city}: ${roundedTemp} degrees Celsius, ${label}`);
   widget.classList.add('loaded');
 }
 
@@ -85,7 +84,6 @@ function renderError() {
   const widget = document.getElementById('weather-widget');
   if (!widget) return;
   widget.innerHTML = `<span class="weather-error">Weather unavailable</span>`;
-  widget.setAttribute('aria-label', 'Current weather unavailable');
   widget.classList.add('loaded');
 }
 
@@ -94,8 +92,7 @@ function initWeather() {
   if (!widget) return;
 
   // Loading state
-  widget.innerHTML = `<span class="weather-icon" aria-hidden="true">🌡️</span><div class="weather-body"><span class="weather-desc">Detecting location...</span></div>`;
-  widget.setAttribute('aria-label', 'Detecting current weather');
+  widget.innerHTML = `<span class="weather-icon">🌡️</span><div class="weather-body"><span class="weather-desc">Detecting location...</span></div>`;
 
   if (!navigator.geolocation) {
     renderError();
