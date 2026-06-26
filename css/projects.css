@@ -33,7 +33,7 @@
   cursor: pointer; font-family: 'DM Sans', sans-serif;
   transition: all .25s;
 }
-.filter-btn:hover, .filter-btn.active { border-color: var(--gold-light); color: var(--gold-light); }
+.filter-btn:hover, .filter-btn.active, .filter-btn[aria-pressed="true"] { border-color: var(--gold-light); color: var(--gold-light); }
 
 /* ── EXPERIENCE CARDS ── */
 .exp-section { padding: 4rem 3rem; max-width: 1200px; margin: 0 auto; }

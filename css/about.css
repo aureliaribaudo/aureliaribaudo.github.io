@@ -233,7 +233,7 @@
   background: var(--border);
   transform: translate(-50%, -50%);
 }
-.gallery-dot.active::before { background: var(--gold-light); }
+.gallery-dot.active::before, .gallery-dot[aria-current="true"]::before { background: var(--gold-light); }
 
 @media (max-width: 768px) {
   .gallery-inner  { padding: 0 1.5rem; }

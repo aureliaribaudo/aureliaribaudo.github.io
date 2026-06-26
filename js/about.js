@@ -30,11 +30,13 @@ function updateSlideState() {
   slides.forEach((slide, i) => {
     const isActive = i === current;
     slide.classList.toggle('active', isActive);
+    slide.setAttribute('aria-hidden', String(!isActive));
   });
 
   [...dotsContainer.children].forEach((dot, i) => {
     const isActive = i === current;
     dot.classList.toggle('active', isActive);
+    dot.setAttribute('aria-current', isActive ? 'true' : 'false');
   });
 }
 
@@ -48,6 +50,7 @@ if (slides.length && dotsContainer && nextButton && prevButton) {
     const dot = document.createElement('button');
     dot.type = 'button';
     dot.classList.add('gallery-dot');
+    dot.setAttribute('aria-label', `Show gallery image ${i + 1}`);
     dot.addEventListener('click', () => goTo(i));
     dotsContainer.appendChild(dot);
   });

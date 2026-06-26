@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function setFieldError(item, message = '') {
     const hasError = Boolean(message);
     item.field.classList.toggle('error', hasError);
+    item.field.setAttribute('aria-invalid', String(hasError));
     item.error.textContent = message;
   }
 

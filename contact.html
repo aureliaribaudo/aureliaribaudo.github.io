@@ -18,22 +18,23 @@
 
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
 <!-- NAV -->
-<nav id="main-nav" class="solid">
-  <a href="index.html" class="nav-logo">A · R</a>
+<nav id="main-nav" class="solid" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo">A · R<span class="sr-only">, Aurelia Ribaudo home page</span></a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="projects.html">Experiences</a></li>
-    <li><a href="contact.html" class="active">Contact Me</a></li>
+    <li><a href="contact.html" class="active" aria-current="page">Contact Me</a></li>
   </ul>
 </nav>
 
 <!-- WEATHER WIDGET -->
-<div id="weather-widget"></div>
+<div id="weather-widget" role="status" aria-live="polite" aria-atomic="true" aria-label="Current weather"></div>
 
-<main id="main-content">
+<main id="main-content" tabindex="-1">
 
 <!-- PAGE HEADER -->
 <div class="page-header">
@@ -67,17 +68,17 @@
       <div class="info-block">
         <p class="info-block-label">Resources</p>
         <div class="social-links">
-          <a href="mailto:aureliaribaudo@gmail.com" class="social-link">
-            <span class="social-icon">✉️</span> aureliaribaudo@gmail.com
+          <a href="mailto:aureliaribaudo@gmail.com" class="social-link" aria-label="Send an email to aureliaribaudo@gmail.com">
+            <span class="social-icon" aria-hidden="true">✉️</span> aureliaribaudo@gmail.com
           </a>
           <a href="images/cvaurepdf.pdf" download class="social-link">
-            <span class="social-icon">📄</span> Download CV
+            <span class="social-icon" aria-hidden="true">📄</span> Download CV<span class="sr-only"> PDF</span>
           </a>
         </div>
       </div>
 
       <div class="availability-badge">
-        <span class="availability-dot"></span>
+        <span class="availability-dot" aria-hidden="true"></span>
         Available for new opportunities
       </div>
     </div>
@@ -86,11 +87,11 @@
     <div class="form-col animate delay-short">
       <h2 class="form-title">Send me a message</h2>
 
-      <form id="contact-form" novalidate>
+      <form id="contact-form" novalidate aria-describedby="form-status form-note">
         <div class="form-row">
           <div class="form-group">
             <label class="form-label" for="fname">First Name *</label>
-            <input class="form-input" type="text" id="fname" name="fname" placeholder="Your name" autocomplete="given-name" required>
+            <input class="form-input" type="text" id="fname" name="fname" placeholder="Your name" autocomplete="given-name" required aria-describedby="fname-error">
             <span class="field-error" id="fname-error"></span>
           </div>
           <div class="form-group">
@@ -101,7 +102,7 @@
 
         <div class="form-group">
           <label class="form-label" for="email">Email *</label>
-          <input class="form-input" type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email" required>
+          <input class="form-input" type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email" required aria-describedby="email-error">
           <span class="field-error" id="email-error"></span>
         </div>
 
@@ -118,22 +119,22 @@
 
         <div class="form-group">
           <label class="form-label" for="message">Message *</label>
-          <textarea class="form-textarea" id="message" name="message" placeholder="Describe your proposal or request..." required></textarea>
+          <textarea class="form-textarea" id="message" name="message" placeholder="Describe your proposal or request..." required aria-describedby="message-error"></textarea>
           <span class="field-error" id="message-error"></span>
         </div>
 
         <div class="form-check">
-          <input type="checkbox" id="privacy" name="privacy" required>
+          <input type="checkbox" id="privacy" name="privacy" required aria-describedby="privacy-error">
           <label for="privacy">I have read and accept the privacy policy. The data entered will be used exclusively to respond to the request.</label>
         </div>
         <span class="field-error" id="privacy-error"></span>
 
-        <p class="form-status" id="form-status"></p>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
         <button class="btn-submit" id="submit-btn" type="submit">Send Message</button>
         <p class="form-note" id="form-note">* Required fields · This form is for demonstration purposes (HTML/CSS/JS)</p>
       </form>
 
-      <div class="success-msg" id="success-msg">
+      <div class="success-msg" id="success-msg" role="status" aria-live="polite" tabindex="-1">
         <h3>Message sent ✓</h3>
         <p>Thank you for contacting me. I will get back to you as soon as possible!</p>
       </div>
@@ -144,7 +145,7 @@
 
 <!-- LOCATION STRIP -->
 <div class="location-strip">
-  <span class="loc-pin">📍</span>
+  <span class="loc-pin" aria-hidden="true">📍</span>
   <div class="loc-text">
     <h3>Palermo, Sicily — Italy</h3>
     <p>Master’s Student in Digital Humanities · UniPa · Available remotely and for travel</p>
