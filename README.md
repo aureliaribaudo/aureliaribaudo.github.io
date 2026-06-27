@@ -34,7 +34,6 @@ Il progetto e composto da quattro pagine principali:
 - Nominatim/OpenStreetMap per il reverse geocoding
 - DummyJSON Quotes API per la citazione del giorno
 
-Non sono presenti framework, bundler o dipendenze installabili con `npm`.
 
 ## Struttura del progetto
 
