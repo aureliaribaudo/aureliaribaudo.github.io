@@ -83,15 +83,15 @@ Poi aprire:
 http://localhost:8000
 ```
 
-L'uso di un server locale e consigliato per testare meglio le chiamate `fetch`, la geolocalizzazione e il comportamento del browser.
+L'uso di un server locale è consigliato per testare meglio le chiamate `fetch`, la geolocalizzazione e il comportamento del browser.
 
 
 
 ## Note sul form contatti
 
-Il form nella pagina `contact.html` e solo dimostrativo: controlla i campi obbligatori e mostra un messaggio di successo, ma non invia email e non salva dati.
+Il form nella pagina `contact.html` è solo dimostrativo: controlla i campi obbligatori e mostra un messaggio di successo, ma non invia email e non salva dati.
 
-Per renderlo realmente funzionante e necessario collegarlo a un servizio esterno o a un backend, per esempio Formspree, Netlify Forms, EmailJS o una API personalizzata.
+Per renderlo realmente funzionante è necessario collegarlo a un servizio esterno o a un backend, per esempio Formspree, Netlify Forms, EmailJS o una API personalizzata.
 
 ## Personalizzazione
 
